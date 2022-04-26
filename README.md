@@ -1,2 +1,1 @@
-# ipfs-docs-zh-CN
-IPFS 技术文档 （简体中文）
+![IPFS技术文档标头横幅](ipfs-docs-header.png)
