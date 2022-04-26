@@ -27,6 +27,6 @@ IPFS利用了内容寻址技术来辨别并且找到我们要的内容，而不�
 - `/Users/Alice/Documents/term_paper.doc`
 - `C:\Users\Joe\My Documents\project_sprint_presentation.ppt`
 
-相比之下，储存在IPFS上的内容都有自己的内容标识（content identifier）或者称之为CID，这就是散列函数（hash）。所有的散列函数都是基于内容产出的，独一无二。
+相比之下，储存在IPFS上的内容都有自己的内容标识（content identifier）或者称之为CID，这就是散列函数（hash）。所有的散列函数都是基于内容产出的（虽然长度比真正的内容短），独一无二。如果散列函数对于你是全新的概念，可以看看
 
 
