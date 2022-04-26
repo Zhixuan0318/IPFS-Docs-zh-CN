@@ -13,7 +13,7 @@ IPFS是一个点对点（peer-to-peer: p2p）储存网络。内容是从世界�
 我们需要了解IPFS三个基础的核心原理：
 1. 利用内容寻址技术进行独特标识
 2. 利用有向无环图（directed acyclic graphs: DAGs）链接内容
-3. 利用分布式散列表（distributed hash tables：DHTs）探索内容
+3. 利用分布式散列表（distributed hash tables: DHTs）探索内容
 
 这些核心原理都是环环相扣的，运行着整个IPFS生态。首先，我们来了解什么是内容寻址技术和独特标识。
 
