@@ -19,5 +19,8 @@ https://en.wikipedia.org/wiki/Aardvark
 /ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Aardvark.html
 ```
 
+:::提示
+查阅上方链接最简单方式就是以IPFS的网关 _IPFS Gateway_ 在你的搜索引擎上进行搜索。你只需要在链接前端加上 `https://ipfs.io` 就能浏览到该页面 [点击浏览](https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Aardvark.html)
+
 
 
