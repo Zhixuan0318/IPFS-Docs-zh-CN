@@ -20,7 +20,10 @@ https://en.wikipedia.org/wiki/Aardvark
 ```
 
 :::提示
-查阅上方链接最简单方式就是以IPFS的网关 _IPFS Gateway_ 在你的搜索引擎上进行搜索。你只需要在链接前端加上 `https://ipfs.io` 就能浏览到该页面 [点击浏览](https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Aardvark.html)
+查阅上方链接最简单方式就是以IPFS的网关 _IPFS Gateway_ 在你的搜索引擎上进行搜索。你只需要在链接前端加上 `https://ipfs.io` 就能浏览到该[页面 →](https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Aardvark.html)
+:::
+
+IPFS知道如何利用内容来寻找你要的资讯，而不是储存的位置（往下我们会提到，这就是所谓的内容可寻技术 content-addressing）。利用IPFS储存的资讯（IPFS化）将会由一串字符代表，填写在URL的中心 (`QmXo…`)。此外，我们并不是从维基百科其中一个伺服器中获得想要的页面，而是利用IPFS同时发送请求给全球多台电脑。哪些电脑储存着你想要的资讯就会传回给你，与你分享。从这里我们可以知道，我们可以从任何拥有土豚资讯的电脑获得那个页面，而不仅仅是依赖维基百科。
 
 
 
