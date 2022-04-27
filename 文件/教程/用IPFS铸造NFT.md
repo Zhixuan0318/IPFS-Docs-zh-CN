@@ -168,9 +168,9 @@ Pinata是最悠久且最出名的远程锁定服务，加上它们有提高免�
 
 Pinata会给予每个用户1GB的免费储存空间，这对于储存几个NFTs是足够的了。
 
-##### 获得API钥匙
+##### 获得API密钥
 
-你需要从Pinata那儿获得API钥匙。这个API钥匙能让你用Minty和你的Pinata账户做互动。  
+你需要从Pinata那儿获得API密钥。这个API密钥能让你用Minty和你的Pinata账户做互动。  
 
 1. 登录Pinata，在菜单选择**API keys**。
 
@@ -178,6 +178,30 @@ Pinata会给予每个用户1GB的免费储存空间，这对于储存几个NFTs�
 
 3. 展延**Pinning Services API**，选择所有**Pins**下方的选项： 
 
+![Pinata的API密钥选项](../图像/pinata-api-key-permission.png)  
+
+4. Pinata会给你 _API key_ ，_API secret_，和 _JWT_： 
+
+    ```
+    API Key: 43537d17e88805007086
+    API Secret: 492b24f041b9120cbf8e35a247fb686793231a3d89045f1046a4f5b2d2175082
+    JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJiZDQ3NjM1Ny1lYWRhLTQ1ZDUtYTVmNS1mM2EwZjRmZGZmYmEiLCJlbWFpbCI6InRhaWxzbm93QHByb3Rvbm1haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siaWQiOiJGUkExIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZX0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6IjQzNTM3ZDE3ZTg4ODA1MDA3MDg2Iiwic2NvcGVkS2V5U2VjcmV0IjoiNDkyYjI0ZjA0MWI5MTIwY2JmOGUzNWEyNDdmYjY4Njc5MzIzMWEzZDg5MDQ1ZjEwNDZhNGY1YjJkMjE3NTA4MiIsImlhdCI6MTYxNjAxMzExNX0.xDV9-cPwDIQInuiB0M--XiJ8dQwwDYMch4gJbc6ogXs
+    ```
+    我们只需要`JWT`。目前，你可以忽略`API Key`和`API Secret`。 
+    
+5. 复制 `config/pinata.env.example`文件至`config/.env`： 
+   
+   ```shell
+   cp config/pinata.env.example config/.env
+   ```
+   
+6. 在`config/.env`里头，在`PINNING_SERVICE_KEY`的双引号`"`中间添加你的JWT： 
+
+    ```shell
+    PINNING_SERVICE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsia..."
+    ```
+
+7. Minty现已成功链接你的Pinata账户，并且可以锁定NFT数据至你的账户上。
 
 
 
