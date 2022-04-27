@@ -79,7 +79,7 @@ HTTP网关为无法本地解析IPFS URI的旧版用户代理提供了互操作�
 
 `https://<cidv1b32>.ipfs.<gateway-host>.tld/path/to/subresource`  
 
-在一些面向用户的程序，开发者应该同时用这两个方法链接到IPFS：  
+如果程序是针对用户而开发的，开发者应该同时使用两个方法链接到IPFS：  
 
 - IPFS URI（统一资源标志符） 
 - HTTP Gateway URL（HTTP网关统一资源定位符）  
