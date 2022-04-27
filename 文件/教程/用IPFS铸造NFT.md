@@ -239,6 +239,20 @@ Pinata会给予每个用户1GB的免费储存空间，这对于储存几个NFTs�
     PINNING_SERVICE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsia..."
     ```
 
-3. Minty现已成功链接你的nft.storage账户，并且可以锁定NFT数据至你的账户上。
+3. Minty现已成功链接你的nft.storage账户，并且可以锁定NFT数据至你的账户上。 
+
+### 部署到测试网  
+
+查看[Hardhat的配置文档](https://hardhat.org/config/)以了解如何配置JSON-RPC节点并将此合约部署到测试网上。当我们将新网络添加到Hardhat的配置后，你可以在运行 `minty` 命令时通过将`HARDHAT_NETWORK` 环境变量（environment variable）设置为新网络的名称来使用它。或者，你可以选择更改 `hardhat.config.js` 中的 `defaultNetwork` ，首选使用新网络。  
+
+将此合约部署到以太坊主网是一个不好的决定，因为合约本身缺乏任何访问控制。参阅[Open Zeppelin的文章](https://docs.openzeppelin.com/contracts/3.x/access-control)，了解什么是访问控制以及拥有它的重要性。
+
+### Minty的运行 
+
+到目前为止，我们已经铸造了NFT，把它添加道理以太坊主网，也把数据添加在IPFS。现在我们来看一看合约到底在做什么，并且了解为什么它们要怎么做。我们也会探讨关于IPFS方面的话题和了解NFT数据是如何托管在IPFS。  
+
+#### Minty智能合约 
+
+
 
 
