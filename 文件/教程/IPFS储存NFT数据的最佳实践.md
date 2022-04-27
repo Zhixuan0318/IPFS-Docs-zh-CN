@@ -86,7 +86,33 @@ HTTP网关为无法本地解析IPFS URI的旧版用户代理提供了互操作�
 
 上述做法无疑将会提供最佳的用户体验，直到更多浏览器支持IPFS URI方案的本机解析。值得一提，这两种网关链接都可以基于CID或IPFS URI轻松生成。  
 
-### Metadata（元数据） 
+### Metadata（元数据）  
+
+大多的NFT都需要结构性的元数据来描述其基本属性。虽然我们在编写元数据时，拥有不同种类的编码和数据格式的选择，但是最标准的格式是把元数据储存成JSON，而编码为UTF-8字节字符串。  
+
+以下例子是JSON格式的NFT元数据：  
+
+```json
+{
+  "name": "No time to explain!",
+  "description": "I said there was no time to explain, and I stand by that.",
+  "image": "ipfs://bafybeict2kq6gt4ikgulypt7h7nwj4hmfi2kevrqvnx2osibfulyy5x3hu/no-time-to-explain.jpeg"
+}
+```  
+
+我们拥有很多不同的方式来构造我们的NFT元数据，也有许多细节是取决于NFT平台的特别使用案例。上述的例子是使用了ERC-721标准中定义的格式。  
+
+一般来说，直接采用或者加以扩展现有标准的格式，像是ERC-721和ERC-1155是个不错的想法，因为你的NFT都能够在标准的钱包或者其他工具（像是区块浏览器）上被显示出来。  
+
+如果你想要链接你的图像，影片，或者是其他的媒体，那就使用IPFS URI。这比起使用HTTP网关URL来得更好，因为它并不是和一个指定的网关运营商绑定。但是如果你为了方便性和互操作性而想要选择使用网关URL，那么你可以直到在应用层（application's presentation layer）才进行生成。   
+
+::: 提示   
+在元数据中使用IPFS URI链接到图像和其他媒体有助于保持NFT数据的完整性！IPFS链接在创建后不能被篡改或更新并且指向不同的数据。   
+
+即使至今你还没使用IPFS来保存你的数据，但你可以为你的数据生成一个IPFS URI并且放入其元数据中。这允许其他人在从别的源头下载后，验证其数据的完整性。如果你（或者其他人）把数据上载到IPFS网络上，其URI就能直接发挥功用了。  
+:::  
+
+因为你需要知道你想要在元数据中引用的图像（或是其他媒体）的CID，最简单的方式就是在把媒体资产上载到IPFS后，创建其元数据。
 
 
 
