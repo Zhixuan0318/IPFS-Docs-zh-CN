@@ -87,7 +87,7 @@ minty deploy
 > deploying contract for token Julep (JLP) to network "localhost"...
 > deployed contract for token Julep (JLP) to 0x5FbDB2315678afecb367f032d93F642f64180aa3 (network: localhost)
 > Writing deployment info to minty-deployment.json
-```　　
+```
 
 这将部署到 `hardhat.config.js` 中配置的网络，默认情况下设置为 `localhost` 网络。如果您收到有关无法访问网络的报错，请确保你使用 `./start-local-environment.sh` 启动了本机开发网络。　　
 
