@@ -34,4 +34,46 @@ IPFS通过内容寻址技术解决了这个问题。当你把数据保存到IPFS
 
 当你使用CID，即使原著消失了，只要IPFS网络上存在着至少一份你想要的数据，你都能成功获取这份数据。这使得CIDs非常适合用于储存NFT。我们需要做的就只是把CID输入在 `ipfs://` 的统一资源标志符（URI）：`ipfs://bafybeidlkqhddsjrdue7y3dy27pu5d7ydyemcls4z24szlyik3we7vqvam/nft-image.png`。这样，就拥有了一个从区块链至代币数据之间无法被破坏的链接了。  
 
-当然，在某些情况之下，我们会想要再发布了NFT后更新其元数据。这完全办得到！你只需要在智能合约中添加一个机制，那就是在每次更新代币的数据后自动更新URI。这将让你旧的IPFS URI更改为新的URI，同时初始版本的记录仍然在区块链的交易历史中保留下来。这增加了透明度，并让每个人都清楚知道更改了什么内容、何时以及由谁更改。
+当然，在某些情况之下，我们会想要再发布了NFT后更新其元数据。这完全办得到！你只需要在智能合约中添加一个机制，那就是在每次更新代币的数据后自动更新URI。这将让你旧的IPFS URI更改为新的URI，同时初始版本的记录仍然在区块链的交易历史中保留下来。这增加了透明度，并让每个人都清楚知道更改了什么内容、何时以及由谁更改。   
+
+## Minty  
+
+为了更方便讲解NFTs和IPFS是如何互相配合和运作的，我们开发了Minty。Minty是一个简单的命令行应用程序，能够自动铸造NFT并利用[Estuary](https://estuary.tech/)，[nft.storage](https://nft.storage)，或[Pinata](https://pinata.cloud)把其数据在IPFS进行锁定。  
+
+NFT平台的运作是较为复杂的。在当今的网络应用程序，我们需要围绕在我们选择的技术栈上做不同的决定，用户界面的规格，API的社交等等。链接区块链的去中心化应用程序（d-apps）还需要和用户钱包，例如[Metamask](https://metamask.io)互动，大大增加了开发的复杂程度。  
+
+但既然Minty的出现是要演示使用IPFS来创建NFT的概念和过程，因此我们不需要专注于现代去中心化应用程序的开发。Minty就只是一个使用Javascript编写的命令行应用程序。  
+
+### 下载Minty  
+
+让我们一起下载Minty，开始动手创建NFTs！首先，你先需要下载NPM，才能下载并且运行Minty。目前Windows系统是不支持的。下载Minty的方法非常简单。你只需要下载其Github的仓库，再下载NPM dependencies，就能开始开启本机的测试环境。　　
+
+1. 复制Minty的仓库，并且进入命名为 `minty` 的目录：　
+
+   ```shell
+   git clone https://github.com/yusefnapora/minty
+   cd minty
+   ```
+
+2. 下载NPM dependencies：
+
+    ```shell
+    npm install
+    ```
+
+3. 添加 `minty` 命令到 `$PATH`。这并不是必须做的步骤，但能让你在电脑的不同角落都能运行Minty：
+
+    ```shell
+    npm link
+    ```
+
+4. 运行 `start-local-environment.sh` 脚本，以便能开始运行以太坊的本机测试网和IPFS daemon：
+
+    ```shell
+    ./start-local-environment.sh
+    > Compiling smart contract
+    > Compiling 16 files with 0.7.3
+    > ...
+    ```
+
+    这个指令会不断运行下去。接下来更多的命令都需要输入到新的终端窗口。
