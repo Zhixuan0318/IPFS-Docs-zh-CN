@@ -195,13 +195,50 @@ Pinata会给予每个用户1GB的免费储存空间，这对于储存几个NFTs�
    cp config/pinata.env.example config/.env
    ```
    
-6. 在`config/.env`里头，在`PINNING_SERVICE_KEY`的双引号`"`中间添加你的JWT： 
+6. `config/.env`里头，在`PINNING_SERVICE_KEY`的双引号`"`中间添加你的JWT： 
 
     ```shell
     PINNING_SERVICE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsia..."
     ```
 
-7. Minty现已成功链接你的Pinata账户，并且可以锁定NFT数据至你的账户上。
+7. Minty现已成功链接你的Pinata账户，并且可以锁定NFT数据至你的账户上。  
 
+#### 选项2：nft.storage 
+
+[nft.storage](https://nft.storage)是由Protocol Labs所提供，用于存储公共NFT数据的新服务。目前，它是一个免费的公测版本，因此注册和试用都非常容易。 
+
+##### 注册nft.storage  
+
+要使用nft.storage，你需要注册一个账户。如果你还没有GitHub账户，你也需要创建一个用于登录。  
+
+1. 前往[nft.storage](https://nft.storage)。
+
+2. 点击**注册**，并且使用你的Github账户进行注册。  
+
+##### 获取API密钥 
+
+你需要从nft.storage获取API密钥。
+
+1. 登录nft.storage，在菜单上选择**Manage API Keys**。
+
+2. 点击**New Key**。 
+
+3. 新的密钥将会显示，复制密钥。密钥是一串 `ey...` 开头的字符串。 
+
+我们需要把API密钥放入一个Minty能找到的文件。
+
+1. 复制 `config/nft.storage.env.example`文件至`config/.env`：
+
+    ```shell
+    cp config/nft.storage.env.example config/.env
+    ```
+
+2. `config/.env`里头，在`PINNING_SERVICE_KEY`的双引号`"`中间添加你的API密钥： 
+
+    ```shell
+    PINNING_SERVICE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsia..."
+    ```
+
+3. Minty现已成功链接你的nft.storage账户，并且可以锁定NFT数据至你的账户上。
 
 
