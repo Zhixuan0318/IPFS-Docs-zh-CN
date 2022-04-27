@@ -251,7 +251,35 @@ Pinata会给予每个用户1GB的免费储存空间，这对于储存几个NFTs�
 
 到目前为止，我们已经铸造了NFT，把它添加道理以太坊主网，也把数据添加在IPFS。现在我们来看一看合约到底在做什么，并且了解为什么它们要怎么做。我们也会探讨关于IPFS方面的话题和了解NFT数据是如何托管在IPFS。  
 
-#### Minty智能合约 
+#### Minty智能合约  
+
+Minty使用以[Solidity](https://soliditylang.org)编写的智能合约，这是最流行的以太坊开发语言。合约使用了[ERC-721 Ethereum NFT标准][eip-721]，继承自非常方便且功能齐全的[OpenZeppelin ERC721的基础合约](https://docs.openzeppelin.com/contracts/3. x/api/token/erc721#ERC721）。  
+
+因为OpenZeppelin的基础合约提供了非常多的核心功能，所以Minty智能合约的构造其实非常简单：  
+
+```solidity
+pragma solidity ^0.7.0;
+import "hardhat/console.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+contract Minty is ERC721 {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
+    constructor(string memory tokenName, string memory symbol) ERC721(tokenName, symbol) {
+        _setBaseURI("ipfs://");
+    }
+    function mintToken(address owner, string memory metadataURI)
+    public
+    returns (uint256)
+    {
+        _tokenIds.increment();
+        uint256 id = _tokenIds.current();
+        _safeMint(owner, id);
+        _setTokenURI(id, metadataURI);
+        return id;
+    }
+}
+```
 
 
 
