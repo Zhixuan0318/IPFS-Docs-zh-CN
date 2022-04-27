@@ -9,4 +9,39 @@
 
 这个教程是专门给开发NFT平台或者其他工具的开发者，并且专注于解释如何格式化你的数据，并且进行链接，以达到最完美的长期效果。如果你想了解更多关于智能合约之间的互动或者如何铸造代币，可以读一读这篇如何利用IPFS铸造NFT（在以太坊测试网上的完整过程）。
 
-如果你想更深入了解开发NFT的最佳实践或NFT整体开发过程，可以前往[NFT School](https://nftschool.dev/)吸取更多概念科普和教程。
+如果你想更深入了解开发NFT的最佳实践或NFT整体开发过程，可以前往[NFT School](https://nftschool.dev/)学习更多概念科普和教程。  
+
+## 不同的类型的链接和应用场景
+
+我们拥有不同的方法来引用IPFS上的数据，不同的方法都有其最佳的应用场景。  
+
+### CID（内容标识） 
+
+CIDs能够独特标识一个内容。CID可以以紧凑的二进制形式在网络上存储和发送，但在前端时，它们会以随机的字符串来显示。举个例子：  
+
+```
+bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
+```  
+
+IPFS上使用着两种不同版本的CID。上方的例子是版本1的CID（或CIDv1），相比旧的“版本0”格式更具有一些优势，尤其是使用IPFS网关在搜索引擎上查看IPFS内容的时候。因此，在寻址定位NFT数据时，最好是使用以base32编码的版本1 CID。   
+
+请在运行`ipfs add`的命令时添加`--cid-version=1`标志，以便在使用IPFS命令行时启用CIDv1：  
+
+```shell
+ipfs add --cid-version=1 ~/no-time-to-explain.jpeg
+added bafkreigg4a4z7o5m5pwzcfyphodsbbdp5sdiu5bwibdw5wvq5t24qswula no-time-to-explain.jpeg
+```  
+
+如果你是使用Javascript, 你可以使用`ipfs.add`的方式： 
+
+```javascript
+const cid = await ipfs.add({ content }, {
+  cidVersion: 1,
+  hashAlg: 'sha2-256'
+})
+```
+
+
+
+
+
