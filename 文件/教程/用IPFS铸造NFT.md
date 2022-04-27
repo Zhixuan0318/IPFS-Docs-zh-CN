@@ -121,7 +121,30 @@ minty deploy
 
 3. 保存，关闭文件。
 
-#### 铸造文件
+#### 铸造文件  
+
+现在我们要代币化我们的NFT机票。这个过程我们称之为铸造。　
+
+1. 呼叫 `mint`　命令，提供我们想要铸造的文件，NFT名称和描述： 
+
+   ```shell 
+    minty mint ~/flight-to-the-moon.txt --name "Moon Flight #1" --description "This ticket serves as proof-of-ownership of a first-class seat on a flight to the      moon."
+    > 🌿 Minted a new NFT:
+    > Token ID:              1
+    > Metadata URI:          ipfs://bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
+    > Metadata Gateway URL:  http://localhost:8080/ipfs/bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
+    > Asset URI:             ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/flight-to-the-moon.txt
+    > Asset Gateway URL:     http://localhost:8080/ipfs/bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/flight-to-the-moon.txt
+    > NFT Metadata:
+    > {
+    >   "name": "Moon Flight #1",
+    >   "description": "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon.",
+    >   "image": "ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/flight-to-the-moon.txt"
+    > }
+    ``` 
+      `minty mint`命令返回了新铸造代币的id，一些我们所提供的元数据（包含了 `name` 和 `description`），和指向包含了我们NFT的文件的IPFS URI。`Metadata URI`显示的IPFS URI是指向储存在IPFS的JSON格式NFT元数据。  
+
+好棒！我们创建了属于自己的NFT，但是唯有你的IPFS节点继续运行，其他人才能获取。如果你关闭了你的电脑又或者处于离线状态，那么没人可以看得到你的NFT！想要解决这个问题，我们就需要使用一个锁定服务来锁定这个NFT。
 
 
 
