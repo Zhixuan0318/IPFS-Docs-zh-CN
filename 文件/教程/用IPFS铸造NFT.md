@@ -92,3 +92,36 @@ minty deploy
 这将部署到 `hardhat.config.js` 中配置的网络，默认情况下设置为 `localhost` 网络。如果您收到有关无法访问网络的报错，请确保你使用 `./start-local-environment.sh` 启动了本机开发网络。　　
 
 部署此合约时，部署的地址和其他信息将写入`minty-deployment.json`。这个文件必须存在，才能使后续命令正常运行。
+
+### 铸造NFT
+
+一旦你运行了本地以太坊网络和IPFS daemon，铸造NFT就变得非常简单了。只需指定你想要代币化－_tokenize_ 的东西，NFT的名称，然后添加描述以告诉用户NFT的用途。　　
+
+#### 准备用于铸造的素材　
+
+首先，我们来准备用于铸造NFT的素材。NFTs有非常广泛的应用场景，你可以选择任何东西用于铸造！举个例子，我们来铸造一张同往月球的机票！　　
+
+1. 创建一个命名为 `flight-to-the-moon.txt`　的文件：
+
+    ```shell
+    touch ~/flight-to-the-moon.txt
+    ```
+
+2. 开启文件，输入一些机票的信息：
+
+    ```
+    THE INTERPLANETARY TRAVEL COMPANY
+    ---------------------------------
+    Departing: Cape Canaveral, Earth
+    Arriving: Base 314, The Moon
+    Boarding time: 17:30 UTC
+    Seat number: 1A
+    Baggage allowance: 5kg 
+    ```
+
+3. 保存，关闭文件。
+
+
+
+
+
