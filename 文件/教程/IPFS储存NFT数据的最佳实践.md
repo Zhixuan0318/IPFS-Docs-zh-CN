@@ -49,11 +49,46 @@ const cid = await ipfs.add({ content }, {
 
 当你成功把数据添加到IPFS上并且获得你的CID后，就可以开始准备NFT的元数据（metadata）然后在区块链上铸造你的NFT。你需要把你的CIDv1转换成IPFS URI（下方会有教程），以便能够从智能合约或者NFT本身的元数据链接到你的内容。  
 
-### IPFS URI  
+### IPFS URI（统一资源标志符）
 
 统一资源标志符（Uniform Resource Identifier: URI），在特定上下文中，指定一个特定的内容。这个上下文是由URI方案（scheme）来决定的（作为前缀附加到URI的前端，然后加上`://`）。IPFS的URI方案就是`ipfs`。
 
-完整的IPFS URI例子：`ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi`
+完整的IPFS URI例子：`ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi`  
+
+IPFS URI是IPFS链接规范，因为`ipfs`方案清楚明确地表明，CID指向的是IPFS上的内容，而不是其他系统的。我们只需在CID字符串前端加上静态字符串`ipfs://`就能产出一个IPFS URI。  
+
+你也可以把文件名融入到IPFS URI的路径。例如，如果你把NFT元数据放置在一个档案里面并且储存在IPFS，那么你的URI会像这样：`ipfs://bafybeibnsoufr2renqzsh347nrx54wcubt5lgkeivez63xvivplfwhtpym/metadata.json`
+
+我们建议你使用IPFS URI，让你的智能合约和储存在IPFS上的数据互相链接。这包括了用于描述NFT的元数据。
+
+IPFS URI也适合让元数据和照片或是任何储存在IPFS上的数字资产互相链接。阅读下方的元数据篇章以获得更多相关资讯。  
+
+### HTTP Gateway URL（HTTP网关统一资源定位符） 
+
+HTTP网关为无法本地解析IPFS URI的旧版用户代理提供了互操作性。  
+
+举个例子：`https://dweb.link/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi` 
+
+支持IPFS的用户代理（不管是通过IPFS Companion的浏览器扩展，又或者是平台本身就支持，像是Brave）都能识别这些网关链接，并且使用本机IPFS协议解析内容。其他用户代理将跟随通往网关的链接，通过IPFS加载内容并使用HTTP传送。你可以在我们的IPFS网关概念科普篇章学习更多有关HTTP网关的知识。  
+
+网关链接非常适合拥有互操作性质，但它不能作为你IPFS上的数据的主要或规范链接。虽然只要IPFS上的任何人拥有你想要的数据，IPFS URI就仍然可以访问，但如果网关运营商处于离线状态，那么网关链接可能就会失败。  
+
+如果使用了网关链接，那么开发者就要确保网关的URL规格是正确的。以下的URL结构都是可以被接受的：  
+
+`https://<gateway-host>.tld/ipfs/<cid>/path/to/subresource`
+
+`https://<cidv1b32>.ipfs.<gateway-host>.tld/path/to/subresource`  
+
+在一些面向用户的程序，开发者应该同时用这两个方法链接到IPFS：  
+
+- IPFS URI（统一资源标志符） 
+- HTTP Gateway URL（HTTP网关统一资源定位符）  
+
+上述做法无疑将会提供最佳的用户体验，直到更多浏览器支持IPFS URI方案的本机解析。值得一提，这两种网关链接都可以基于CID或IPFS URI轻松生成。  
+
+### Metadata（元数据） 
+
+
 
 
 
