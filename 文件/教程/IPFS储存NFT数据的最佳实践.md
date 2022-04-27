@@ -49,7 +49,11 @@ const cid = await ipfs.add({ content }, {
 
 当你成功把数据添加到IPFS上并且获得你的CID后，就可以开始准备NFT的元数据（metadata）然后在区块链上铸造你的NFT。你需要把你的CIDv1转换成IPFS URI（下方会有教程），以便能够从智能合约或者NFT本身的元数据链接到你的内容。  
 
-### IPFS URI
+### IPFS URI  
+
+统一资源标志符（Uniform Resource Identifier: URI），在特定上下文中，指定一个特定的内容。这个上下文是由URI方案（scheme）来决定的（作为前缀附加到URI的前端，然后加上`://`）。IPFS的URI方案就是`ipfs`。
+
+完整的IPFS URI例子：`ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi`
 
 
 
