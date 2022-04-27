@@ -76,4 +76,19 @@ NFT平台的运作是较为复杂的。在当今的网络应用程序，我们�
     > ...
     ```
 
-    这个指令会不断运行下去。接下来更多的命令都需要输入到新的终端窗口。
+    这个指令会不断运行下去。接下来更多的命令都需要输入到新的终端窗口。　
+    
+### 部署智能合约
+
+在运行任何其他的 `minty` 命令之前，您需要部署一个智能合约：　　
+
+```shell
+minty deploy
+> deploying contract for token Julep (JLP) to network "localhost"...
+> deployed contract for token Julep (JLP) to 0x5FbDB2315678afecb367f032d93F642f64180aa3 (network: localhost)
+> Writing deployment info to minty-deployment.json
+```　　
+
+这将部署到 `hardhat.config.js` 中配置的网络，默认情况下设置为 `localhost` 网络。如果您收到有关无法访问网络的报错，请确保你使用 `./start-local-environment.sh` 启动了本机开发网络。　　
+
+部署此合约时，部署的地址和其他信息将写入`minty-deployment.json`。这个文件必须存在，才能使后续命令正常运行。
