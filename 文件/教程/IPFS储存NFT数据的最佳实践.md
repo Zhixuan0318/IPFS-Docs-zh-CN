@@ -112,7 +112,22 @@ HTTP网关为无法本地解析IPFS URI的旧版用户代理提供了互操作�
 即使至今你还没使用IPFS来保存你的数据，但你可以为你的数据生成一个IPFS URI并且放入其元数据中。这允许其他人在从别的源头下载后，验证其数据的完整性。如果你（或者其他人）把数据上载到IPFS网络上，其URI就能直接发挥功用了。  
 :::  
 
-因为你需要知道你想要在元数据中引用的图像（或是其他媒体）的CID，最简单的方式就是在把媒体资产上载到IPFS后，创建其元数据。
+因为你需要知道你想要在元数据中引用的图像（或是其他媒体）的CID，最简单的方式就是在把媒体资产上载到IPFS后，创建其元数据。  
+
+### 利用IPFS目录以保留文件名  
+
+当你想要把数据添加到IPFS时，你可以把文件包含在IPFS目录里来保留“人类能读懂”的文件名。  
+
+在Javascript里，你可以在呼叫`ipfs.add`时选择`wrapWithDirectory`的选项：  
+
+```js
+const cid = await ipfs.add(
+  { path: 'metadata.json', content: aJsonString }, 
+  { wrapWithDirectory: true }
+)
+```   
+
+当你添加包含在目录中的文件时，`ipfs.add` 返回目录对象（object）的CID。接着，你可以在CID后添加一个 `/` 字符，再添加你的文件名。这样，你就已经构建了一个完整的IPFS URI，用于前往你的文件。例如：`ipfs://bafybeibnsoufr2renqzsh347nrx54wcubt5lgkeivez63xvivplfwhtpym/metadata.json`。
 
 
 
