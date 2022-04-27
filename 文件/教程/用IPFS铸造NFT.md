@@ -125,7 +125,7 @@ minty deploy
 
 现在我们要代币化我们的NFT机票。这个过程我们称之为铸造。　
 
-1. 呼叫 `mint`　命令，提供我们想要铸造的文件，NFT名称和描述： 
+1. 呼叫 `mint` 命令，提供我们想要铸造的文件，NFT名称和描述： 
 
    ```shell 
     minty mint ~/flight-to-the-moon.txt --name "Moon Flight #1" --description "This ticket serves as proof-of-ownership of a first-class seat on a flight to the      moon."
