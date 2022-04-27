@@ -279,7 +279,15 @@ contract Minty is ERC721 {
         return id;
     }
 }
-```
+```  
+
+如果你阅读了[OpenZeppelin ERC721的指南](https://docs.openzeppelin.com/contracts/3.x/erc721)，你会发现Minty合约有非常多的相似之处。`mintToken` 函数只是一个计数器来发行新的代币id。它也使用了基本合约提供的 `_setTokenURI` 函数将元数据的URI与新的代币id进行链接。  
+
+需要注意的是，我们在构造函数（constructor）中将基础URI的设置为 `ipfs://`。当我们在 `mintToken` 函数中为每个代币设置元数据URI时，我们不需要储存前缀，因为基础合约的 `tokenURI` 访问器函数会自动套在每个代币的URI前段。  
+
+还有一样事情需要注意的是，此合同是**还未准备好**的。它不包括任何的[访问控制][docs-openzeppelin-access-control]，无法限制哪些账户可以呼叫`mintToken`函数。如果你决定开发基于 Minty的生产平台，你需要探索可用的访问控制模式并思考哪些适用于作为你平台的访问模型。   
+
+
 
 
 
