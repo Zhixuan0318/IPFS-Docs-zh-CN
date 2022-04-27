@@ -41,7 +41,15 @@ const cid = await ipfs.add({ content }, {
 })
 ```  
 
-如果你的内容本身就拥有版本0（v0）的CID，就不需要为了拥有新版本的CID格式而再添加到IPFS上！你可以使用IPFS的命令行或是在[cid.ipfs.io](https://cid.ipfs.io)，把你的v0 CID转换成v1。如果你不知道你的CID是什么版本的，其实非常容易辨别。v0的CID拥有46个字符，并且以`Qm`作为开头。
+如果你的内容本身就拥有版本0（v0）的CID，就不需要为了拥有新版本的CID格式而再添加到IPFS上！你可以使用IPFS的命令行或是在[cid.ipfs.io](https://cid.ipfs.io)，把你的v0 CID转换成v1。如果你不知道你目前的CID是什么版本，其实非常容易辨别。v0的CID拥有46个字符，并且以`Qm`作为开头。  
+
+::: 提示  
+你可以在ProtoSchool上学到更多CIDs的相关知识。  
+:::  
+
+当你成功把数据添加到IPFS上并且获得你的CID后，就可以开始准备NFT的元数据（metadata）然后在区块链上铸造你的NFT。你需要把你的CIDv1转换成IPFS URI（下方会有教程），以便能够从智能合约或者NFT本身的元数据链接到你的内容。  
+
+### IPFS URI
 
 
 
