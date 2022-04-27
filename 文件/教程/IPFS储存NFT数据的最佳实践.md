@@ -32,14 +32,16 @@ ipfs add --cid-version=1 ~/no-time-to-explain.jpeg
 added bafkreigg4a4z7o5m5pwzcfyphodsbbdp5sdiu5bwibdw5wvq5t24qswula no-time-to-explain.jpeg
 ```  
 
-如果你是使用Javascript, 你可以使用`ipfs.add`的方式： 
+如果使用Javascript, 你可以选择使用`ipfs.add`的方式： 
 
 ```javascript
 const cid = await ipfs.add({ content }, {
   cidVersion: 1,
   hashAlg: 'sha2-256'
 })
-```
+```  
+
+如果你的内容本身就拥有版本0（v0）的CID，就不需要为了拥有新版本的CID格式而再添加到IPFS上！你可以使用IPFS的命令行或是在[cid.ipfs.io](https://cid.ipfs.io)，把你的v0 CID转换成v1。如果你不知道你的CID是什么版本的，其实非常容易辨别。v0的CID拥有46个字符，并且以`Qm`作为开头。
 
 
 
