@@ -127,8 +127,21 @@ const cid = await ipfs.add(
 )
 ```   
 
-当你添加包含在目录中的文件时，`ipfs.add` 返回目录对象（object）的CID。接着，你可以在CID后添加一个 `/` 字符，再添加你的文件名。这样，你就已经构建了一个完整的IPFS URI，用于前往你的文件。例如：`ipfs://bafybeibnsoufr2renqzsh347nrx54wcubt5lgkeivez63xvivplfwhtpym/metadata.json`。
+当你添加包含在目录中的文件时，`ipfs.add` 返回目录对象（object）的CID。接着，你可以在CID后添加一个 `/` 字符，再添加你的文件名。这样，你就已经构建了一个完整的IPFS URI，用于前往你的文件。例如：`ipfs://bafybeibnsoufr2renqzsh347nrx54wcubt5lgkeivez63xvivplfwhtpym/metadata.json`。 
 
+### 持久性和可用性  
+
+当你把数据存储在IPFS上时，用户可以从任何具有副本存档的IPFS节点获取它。这可以进一步提高数据传输的效率并大大减少任何单个服务器上的负载。当每个用户获取数据时，他们会保留一份本地副本，当稍后有其它的用户请求同样的数据时，就能直接从这些节点获取。但有一点需要注意的是，这些数据只是暂时性的被保留下来，除非用户决定把数据“锁定”（pin）。当一个CID被锁定时，代表了我们告诉IPFS这个数据非常之重要，并且不应该被移除（当硬盘的容量接近极限）。  
+
+当你开发了一个平台，并且以IPFS作为数据储存（storage），就应该把这些数据锁定在一些强大且拥有高度可用性的IPFS节点（没有大量停机时间和能在良好性能的情况下运行的）。想了解更多，可以读一读关于服务器基础架构的技术文档，了解IPFS集群（ipfs cluster）如何帮助你管理自己的IPFS节点，这些节点可以自行协调，锁定你的平台数据，并且能有效将其提供给你的平台用户。
+
+或者，你可以选择使用远程锁定服务。像是[Pinata](https://pinata.cloud)和[Eternum](https://www.eternum.io/)就能为你的IPFS数据提供多余，高可用性的存储，无需任何 _供应商锁定_ 。由于IPFS的内容是通过CID来进行内容锁定的而不是位置，因此随着平台的增长，你可以在这些远程锁定服务之间更换或迁移到你的私人基础设施。  
+
+你也可以使用由[Protocol Labs](https://protocol.ai)所推出的[nft.storage](https://nft.storage)，把数据储存到IPFS（由去中心化的储存网络Filecoin所提供的长期持久性）。为了促进 NFT生态系统的发展并保护NFT这全新的文物数字工地，[nft.storage](https://nft.storage) 为公共NFT数据提供了免费存储和带宽。赶快在 [https://nft.storage](https://nft.storage) 注册一个免费帐户！ 
+
+想要学习更多关于持久性和锁定，包括了远程锁定服务的运作方式，可以阅读关于持久性，永久性和锁定的概述篇章。  
+
+如果你想要寻找关于使用远程锁定服务来处理NFT数据的应用程序例子，可以阅读这篇关于使用IPFS铸造NFT的教程。
 
 
 
