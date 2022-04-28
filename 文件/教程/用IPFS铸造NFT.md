@@ -328,7 +328,62 @@ async mintToken(ownerAddress, metadataURI) {
 
 ### 把NFT数据储存在IPFS  
 
+智能合约的 `mintToken` 函数需要一个IPFS元数据的URI，通常以JSON格式来描述的NFT。Minty使用了在EIP-721中提到的元数据规格，支持像下方例子的JSON格式： 
 
+```json
+{
+    "name": "A name for this NFT",
+    "description": "An in-depth description of the NFT",
+    "image": "ipfs://bafybeidlkqhddsjrdue7y3dy27pu5d7ydyemcls4z24szlyik3we7vqvam/nft-image.png"
+}
+```  
+
+代币的NFT数据的URI会在 `image` 这栏。当然，这一栏并不一定是一个图像，它可以是不同的文件类型。  
+
+想要获取智能合约的元数据URI，我们需要把图像添加到IPFS，以便获得IPFS的CID，接着再使用这个CID构建一个 `ipfs://` 的URI。然后我们创建一个JSON物品，包含了图像URI和用户提高的 `name` 和 `description`。最后，我们把这个JSON物品添加到IPFS，创建元数据的 `ipfs://` URI，并且把它添加到我们的智能合约。  
+
+Minty的 `createNFTFromAssetData`功能会负责这个过程，并且由几个函数帮忙：  
+
+```javascript
+async createNFTFromAssetData(content, options) {
+  // add the asset to IPFS
+  const filePath = options.path || 'asset.bin'
+  const basename =  path.basename(filePath)
+  // When you add an object to IPFS with a directory prefix in its path,
+  // IPFS will create a directory structure for you. This is nice, because
+  // it gives us URIs with descriptive filenames in them e.g.
+  // 'ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/cat-pic.png' vs
+  // 'ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq'
+  const ipfsPath = '/nft/' + basename
+  const { cid: assetCid } = await this.ipfs.add({ path: ipfsPath, content })
+  // make the NFT metadata JSON
+  const assetURI = ensureIpfsUriPrefix(assetCid) + '/' + basename
+  const metadata = await this.makeNFTMetadata(assetURI, options)
+  // add the metadata to IPFS
+  const { cid: metadataCid } = await this.ipfs.add({ 
+    path: '/nft/metadata.json', 
+    content: JSON.stringify(metadata)
+  })
+  const metadataURI = ensureIpfsUriPrefix(metadataCid) + '/metadata.json'
+  // get the address of the token owner from options, 
+  // or use the default signing address if no owner is given
+  let ownerAddress = options.owner
+  if (!ownerAddress) {
+    ownerAddress = await this.defaultOwnerAddress()
+  }
+  // mint a new token referencing the metadata URI
+  const tokenId = await this.mintToken(ownerAddress, metadataURI)
+  // format and return the results
+  return {
+    tokenId,
+    metadata,
+    assetURI,
+    metadataURI,
+    assetGatewayURL: makeGatewayURL(assetURI),
+    metadataGatewayURL: makeGatewayURL(metadataURI),
+  }
+}
+```
 
 
 
