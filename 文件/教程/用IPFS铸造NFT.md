@@ -285,7 +285,50 @@ contract Minty is ERC721 {
 
 需要注意的是，我们在构造函数（constructor）中将基础URI的设置为 `ipfs://`。当我们在 `mintToken` 函数中为每个代币设置元数据URI时，我们不需要储存前缀，因为基础合约的 `tokenURI` 访问器函数会自动套在每个代币的URI前段。  
 
-还有一样事情需要注意的是，此合同是**还未准备好**的。它不包括任何的[访问控制][docs-openzeppelin-access-control]，无法限制哪些账户可以呼叫`mintToken`函数。如果你决定开发基于 Minty的生产平台，你需要探索可用的访问控制模式并思考哪些适用于作为你平台的访问模型。   
+还有一样事情需要注意的是，此合同是**还未准备好**的。它不包括任何的[访问控制][docs-openzeppelin-access-control]，无法限制哪些账户可以呼叫`mintToken`函数。如果你决定开发基于 Minty的生产平台，你需要探索可用的访问控制模式并思考哪些适用于作为你平台的访问模型。    
+
+#### 部署合约 
+
+在你铸造新的NFT之前，你需要将合约部署到区块链网络上。Minty使用了[HardHat](https://hardhat.org)来管理合约部署。默认情况下，Minty将会部署到[配置为在你电脑localhost网络上运行](https://hardhat.org/hardhat-network/#connecting-to-hardhat-network-from-wallets-and-other-software)的[HardHat开发网络](https://hardhat.org/hardhat-network)的一个实例。
+
+我们也可以通过编辑minty repo中的 `hardhat.config.js` 文件，将合约部署到[Ethereum的测试网络](https://ethereum.org/en/developers/docs/networks/)。请参阅[HardHat的文档](https://hardhat.org/config/#json-rpc-based-networks) 了解如何配置HardHat，以部署到连接着测试网的节点，不论是在本地运行或是由提供商，例如[Infura](https://infura.io)托管的。因为部署合约是会消耗 `ETH` 的，你需要为你选择的网络获取一些测试版本的 `ETH` 并配置好Hardhat以使用正确的钱包。   
+
+#### 呼叫 `mintToken` 智能合约函数  
+
+让我们看看Minty的Javascript编码是如何和智能合约的 `mintToken` 函数互动的。这过程会在 `Minty` 类的 `mintToken`功能里：  
+
+```javascript
+async mintToken(ownerAddress, metadataURI) {
+  // The smart contract adds an ipfs:// prefix to all URIs, 
+  // so make sure to remove it so it doesn't get added twice
+  metadataURI = stripIpfsUriPrefix(metadataURI)
+  // Call the mintToken smart contract function to issue a new token
+  // to the given address. This returns a transaction object, but the 
+  // transaction hasn't been confirmed yet, so it doesn't have our token id.
+  const tx = await this.contract.mintToken(ownerAddress, metadataURI)
+  // The OpenZeppelin base ERC721 contract emits a Transfer event 
+  // when a token is issued. tx.wait() will wait until a block containing 
+  // our transaction has been mined and confirmed. The transaction receipt 
+  // contains events emitted while processing the transaction.
+  const receipt = await tx.wait()
+  for (const event of receipt.events) {
+    if (event.event !== 'Transfer') {
+        console.log('ignoring unknown event type ', event.event)
+        continue
+    }
+    return event.args.tokenId.toString()
+  }
+  throw new Error('unable to get token id')
+}
+```   
+
+你可以看到的是，呼叫智能合约的函数其实和呼叫Javascript的正常函数是类似的，这就要归功于[ethers.js智能合约库了](https://docs.ethers.io/v5/)。但是，由于 `mintToken`函数改变了区块链的状态，它无法直接返还一个结果。这是因为这个函数创造了一个以太坊交易，我们并不知道这个包含了我们交易纪录的区块是否会真的被打包并且链接到主链上。例如，我们可能没有支付足够的交易费用（gas）。  
+
+想要得到我们NFT新的代币id，我们需要呼叫 `tx.wait()`，这就会等待，直到我们的交易真的被确定下来。代币id将会包裹在 `Transfer` 的事件中，而这个事件是当新的代币被创造后或者转给新的主人时，由基础合约发出的。我们可以查看由 `tx.wait()` 返还的交易单据，从 `Transfer` 事件里获取代币的id。  
+
+### 把NFT数据储存在IPFS  
+
+
 
 
 
