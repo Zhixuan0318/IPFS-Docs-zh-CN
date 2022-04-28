@@ -49,7 +49,9 @@ ProtoSchool的[有趣教程](https://proto.school/tutorials)将会教导你关�
 
 还在找寻灵感？你可以在Awesome IPFS上看到许多由社区成员开发的有趣项目。 
 
-[前往Awesome IPFS查看 →](https://awesome.ipfs.io/)
+[前往Awesome IPFS查看 →](https://awesome.ipfs.io/) 
+
+![Awesome IPFS主页](./图像/awesome-ipfs.png)
 
 ## 成为IPFS的社区成员  
 
