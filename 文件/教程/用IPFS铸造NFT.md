@@ -383,7 +383,9 @@ async createNFTFromAssetData(content, options) {
     metadataGatewayURL: makeGatewayURL(metadataURI),
   }
 }
-```
+```  
+
+我们使用带有目录结构的 `path` 参数将我们的数据添加到IPFS，例如，`/nft/metadata.json`，而不仅仅是 `metadata.json`。 虽然这并不是必要的，但它为我们提供了更具描述性的URI，其中包括人类能读懂的文件名。不好的是，元数据URI需要更多的链上空间，因为它包括 `/metadata.json` 部分以及IPFS的CID。在字节成本较高的生产环境中，你可能会想要修改智能合约，只存储CID的部分，并在返回URI之前自动附加文件名，或者仅仅是存储元数据而无需目录的包装。
 
 
 
