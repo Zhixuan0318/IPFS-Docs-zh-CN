@@ -23,7 +23,7 @@ IPFS技术文档|IPFS，星际文件系统的开发者技术文档主页
 
 这些工具可以帮助你更快、更高效地使用和构建IPFS——今天就试试吧！ 
 
-网络伴侣|IPFS电脑版本|IPLD浏览器 
+Browser Companion|IPFS电脑版本|IPLD浏览器 
 |---|---|---| 
-![Firefox上的网络伴侣](./图像/ipfs-companion.png)|![IPFS电脑版本](./图像/ipfs-desktop.png)|![IPLD浏览器](./图像/ipld-explorer.png)
+![Firefox上的Browser Companion](./图像/ipfs-companion.png)|![IPFS电脑版本](./图像/ipfs-desktop.png)|![IPLD浏览器](./图像/ipld-explorer.png)
 
