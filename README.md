@@ -9,7 +9,7 @@ IPFS技术文档（英文版本）：[网页](https://docs.ipfs.io/)/[Github仓�
 [![项目图标](https://img.shields.io/badge/%E9%A1%B9%E7%9B%AE-IPFS-blue)](https://ipfs.io/) 
 [![项目方图标](https://img.shields.io/badge/%E9%A1%B9%E7%9B%AE%E6%96%B9-Protocol%20Labs-blue)](https://protocol.ai/)
 
-## 欢迎你参与我们❤️
+## 欢迎参与我们❤️
 
 ### 议题 Issues
 如果你发现任何问题，可以[点击这里](https://github.com/Zhixuan0318/ipfs-docs-zh-CN/issues)创建一个议题。我们会尽快审批并且合到main分支上。
