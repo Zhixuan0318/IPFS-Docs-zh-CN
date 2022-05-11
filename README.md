@@ -20,4 +20,9 @@ IPFS技术文档（英文版本）：[网页](https://docs.ipfs.io/)/[Github仓�
 ### 拉取请求 Pull Request
 我们当然也欢迎你呈交拉取请求。我们会尽快审批并且合到main分支上。
 
+### 核心成员
+
+1. **陈治宪 Tan Zhi Xuan**  
+[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Zhixuan0318) [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tan-zhi-xuan-805836196/)
+
 
