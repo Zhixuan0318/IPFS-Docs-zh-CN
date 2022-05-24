@@ -15,3 +15,22 @@ IPFS桌面版|IPFS桌面版在应用程序中为你提供了IPFS的所有功能-
 文件页面|浏览页面|同伴页面|设定页面|菜单栏/任务栏
 |---|---|---|---|---|
 |![文件页面截图](./图像/IPFS桌面版/desktop-files.png) | ![浏览页面截图](./图像/IPFS桌面版/desktop-explore.png) | ![同伴页面截图](./图像/IPFS桌面版/desktop-peers.png) | ![设定页面截图](./图像/IPFS桌面版/desktop-settings.png) | ![菜单栏/任务栏截图](./图像/IPFS桌面版/desktop-menubar-taskbar.png) |
+
+### 特色亮点
+
+- **在系统启动时启动你的节点（Mac/Windows），并使用便捷的菜单栏/系统托盘菜单从你的操作系统**控制它。
+- **以各种快捷的方式导入文件、文件夹和屏幕截图到IPFS**，包括拖放和（对于Windows）右键单击文件/文件夹的图标。
+- **通过熟悉的文件浏览器轻松管理你的节点内容**，该浏览器提供了许多快捷方式例如：重命名/移动/锁定文件和文件夹、直接在IPFS桌面上预览各种常见的文件格式、和将内容ID或可共享的链接复制到你的剪贴板等。
+- **快速下载CIDs、IPFS路径和IPNS路径** - 通过右击电脑的菜单栏上IPFS图标选择 "下载..."，粘贴一个哈希值，就完成了。
+- **在地图上显示你在世界各地的IPFS同伴**，显示你连接到哪些节点，它们的地点，它们使用的连接，以及更多。
+- **探索IPFS文件的 "Merkle森林 "**，它让你亲眼看到存储在IPFS上的例子数据集——或你自己的IPFS文件——是如何被分解成内容地址的碎片。
+- **各大操作系统对IPFS文件和链接的支持**（在Mac、Windows和一些Linux系统上）自动将以`ipfs://`、`ipns://`和`dweb:`开始的链接在IPFS桌面版中打开。
+- **CLI导师模式**帮助你边走边学习IPFS命令。
+
+### 安装说明
+
+如果你想要安装IPFS桌面版，请遵循你的操作系统的具体说明。IPFS桌面版是使用[Electron框架](https://www.electronjs.org)构建的，因此该应用程序应该在Electron可运行的地方正常运行。
+
+[Windows](#windows) | [macOS](#macos) | [Ubuntu](#ubuntu)  
+|---|---|---|
+| [![Windows图标](./图像/IPFS桌面版/windows-icon.png)](#windows) | [![macOS图标](./图像/IPFS桌面版/apple-icon.png)](#macos) | [![Ubuntu图标](./图像/IPFS桌面版/ubuntu-icon.png)](#ubuntu) |
