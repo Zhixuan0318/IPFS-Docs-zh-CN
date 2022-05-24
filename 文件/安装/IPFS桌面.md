@@ -42,7 +42,7 @@ IPFS桌面版|IPFS桌面版在应用程序中为你提供了IPFS的所有功能-
 1. 进入[IPFS桌面版下载页面](https://github.com/ipfs/ipfs-desktop/releases)
 2. 找到以`.exe`结尾的IPFS桌面版最新版本的链接。
 
-   ![IPFS桌面版下载页面](./图像/IPFS桌面版/install-windows-download-ex-page.png)
+   ![IPFS桌面版下载页面截图](./图像/IPFS桌面版/install-windows-download-exe-page.png)
 
 3. 运行`.exe`文件，开始安装。
 4. 选择是否只为你自己还是为电脑上所有用户安装该应用程序。点击**下一步**。
@@ -59,6 +59,38 @@ IPFS桌面版|IPFS桌面版在应用程序中为你提供了IPFS的所有功能-
 
 7. 现在你可以在状态栏中找到一个IPFS图标。
 
-   ！[Windows状态栏中的IPFS桌面版状态栏菜单。](./图像/IPFS桌面版/install-windows-ipfs-desktop-status-bar.png)
+   ![Windows状态栏中的IPFS桌面版状态栏菜单](./图像/IPFS桌面版/install-windows-ipfs-desktop-status-bar.png)
 
-IPFS桌面版应用程序已完成安装。你现在可以开始[添加你的网站]（）。
+IPFS桌面版应用程序已完成安装。你现在可以开始[添加你的网站]()。
+
+## macOS
+
+1. 从[ipfs/ipfs桌面版发布页面](https://github.com/ipfs/ipfs-desktop/releases)下载最新可用的`.dmg`文件
+
+   ![GitHub中的可用下载链接列表](./图像/IPFS桌面版/install-macos-dmg-file-link.png)
+
+2. 打开`ipfs-desktop.dmg`文件。
+3. 将IPFS图标拖入**应用程序**文件夹。
+
+   ![MacOS拖动安装窗口](./图像/IPFS桌面版/install-macos-drag-ipfs-drag.png)
+
+4. 打开你的**应用程序**文件夹并打开IPFS桌面版应用程序。
+5. 5.你可能会得到警告信息，说_IPFS Desktop.app无法打开。点击**在Finder中显示**。
+
+   ![显示电脑无法安装该应用程序的错误信息。](./图像/IPFS桌面版/install-macos-ipfs-canot-be-opened.png)
+
+6. 在你的**应用程序**文件夹中找到**IPFS Desktop.app**。
+7. 按住`control`键，点击**IPFS Desktop.app**，并点击**开启**。
+
+   ![右击IPFS Desktop.app的上下文菜单](./图像/IPFS桌面版/install-macos-force-open.png)
+
+8. 在新窗口中点击**开启**。
+
+   ![打开确认窗口](./图像/IPFS桌面版/install-macos-open-confirmation.png)
+
+9. 现在你可以在状态栏中找到一个IPFS图标。
+
+   ![MacOS状态栏中的IPFS桌面版状态栏菜单。](./图像/IPFS桌面版/install-macos-ipfs-desktop-status-bar.png)
+
+IPFS桌面版应用程序已完成安装。你现在可以开始[添加你的网站]()。
+
