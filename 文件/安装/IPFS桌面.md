@@ -75,9 +75,9 @@ IPFS桌面版应用程序已完成安装。你现在可以开始[添加你的网
    ![MacOS拖动安装窗口](./图像/IPFS桌面版/install-macos-drag-ipfs-drag.png)
 
 4. 打开你的**应用程序**文件夹并打开IPFS桌面版应用程序。
-5. 5.你可能会得到警告信息，说_IPFS Desktop.app无法打开。点击**在Finder中显示**。
+5. 你可能会得到警告信息，说_IPFS Desktop.app无法打开。点击**在Finder中显示**。
 
-   ![显示电脑无法安装该应用程序的错误信息。](./图像/IPFS桌面版/install-macos-ipfs-canot-be-opened.png)
+   ![显示无法安装该应用程序的警告信息](./图像/IPFS桌面版/install-macos-ipfs-canot-be-opened.png)
 
 6. 在你的**应用程序**文件夹中找到**IPFS Desktop.app**。
 7. 按住`control`键，点击**IPFS Desktop.app**，并点击**开启**。
