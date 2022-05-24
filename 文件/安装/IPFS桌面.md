@@ -94,7 +94,11 @@ IPFS桌面版应用程序已完成安装。你现在可以开始[添加你的网
 
 IPFS桌面版应用程序已完成安装。你现在可以开始[添加你的网站]()。
 
-###使用".deb "安装
+### Ubuntu
+
+虽然这说明是针对Ubuntu的，但它们可能适用于大多数与Ubuntu相关的Linux发行版。对于非Ubuntu的Linux发行版，请查看[IPFS桌面版GitHub仓库](https://github.com/ipfs/ipfs-desktop#install)的安装说明。
+
+### 使用".deb "安装
 
 1. 从 [IPFS桌面版的GitHub仓库] (https://github.com/ipfs/ipfs-desktop#linuxfreebsd) 下载最新的`.deb`安装程序。
 2. 用Ubuntu软件双击安装软件包，或者移动到你下载安装程序的地方，通过命令行安装。
@@ -104,5 +108,42 @@ IPFS桌面版应用程序已完成安装。你现在可以开始[添加你的网
     ```
     
     将"[version]"替换为你刚刚下载的IPFS包的版本号。
+    
+### 使用AppImage进行安装
+
+::警告
+当使用AppImage可执行文件安装IPFS桌面版时，你将无法访问命令行`ipfs`命令。这个限制是基于AppImages的运行方式以及它们如何将其过程容器化。
+
+如果你确定你不需要使用命令行的 `ipfs` 命令，那你可以继续安装 AppImage。否则，你考虑使用 [deb installer ↑]()
+:::
+
+1. 从 [IPFS桌面版GitHub仓库] (https://github.com/ipfs/ipfs-desktop#linuxfreebsd) 下载最新的 `.AppImage` 包。
+2. 移动到你下载`.AppImage`文件的地方，并使其可执行。  
+
+   ```shell
+   cd Downloads
+   chmod a+x ./ipfs-desktop-linux.AppImage
+   ```
+
+3. 通过命令行使用`./ipfs-desktop-linux.AppImage`打开`.AppImage`。
+
+   ```shell
+   ./ipfs-desktop-linux.AppImage
+   ```
+
+   你也可以通过在文件管理器中双击`.AppImage`文件来运行它。
+   
+## 软件包管理器
+
+| 软件包管理器                                                                                                   | 命令                    |
+| ------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| [Homebrew](https://formulae.brew.sh/formula/ipfs#default)                                                                    | `brew install ipfs --cask`     |
+| [Chocolatey](https://community.chocolatey.org/packages/ipfs-desktop)                                                         | `choco install ipfs-desktop` |
+| [Scoop](https://github.com/ScoopInstaller/Extras/blob/master/bucket/ipfs-desktop.json) maintained by [@NatoBoram](https://github.com/NatoBoram) | `scoop bucket add extras && scoop install ipfs-desktop` |
+| [AUR](https://aur.archlinux.org/packages/ipfs-desktop/) maintained by [@alexhenrie](https://github.com/alexhenrie) | `ipfs-desktop`               | 
+
+## 下一步
+
+现在你已经安装了IPFS桌面版，你可以开始分享文件并与网络上的其他节点进行互动了！查看如何[使用IPFS来托管网站→]()。
 
 
