@@ -34,3 +34,31 @@ IPFS桌面版|IPFS桌面版在应用程序中为你提供了IPFS的所有功能-
 [Windows](#windows) | [macOS](#macos) | [Ubuntu](#ubuntu)  
 |---|---|---|
 | [![Windows图标](./图像/IPFS桌面版/windows-icon.png)](#windows) | [![macOS图标](./图像/IPFS桌面版/apple-icon.png)](#macos) | [![Ubuntu图标](./图像/IPFS桌面版/ubuntu-icon.png)](#ubuntu) |
+
+或者，如果你想使用一个软件包管理器，请查看这个由IPFS社区维护的[第三方软件包列表](#软件包管理器)。
+
+## Windows
+
+1. 进入[IPFS桌面版下载页面](https://github.com/ipfs/ipfs-desktop/releases)
+2. 找到以`.exe`结尾的IPFS桌面版最新版本的链接。
+
+   ![IPFS桌面版下载页面。](./图像/IPFS桌面版/install-windows-download-ex-page.png)
+
+3. 运行`.exe`文件，开始安装。
+4. 选择是否只为你自己还是为电脑上所有用户安装该应用程序。点击**下一步**。
+
+   ![IPFS桌面版安装选项窗口。](./图像/IPFS桌面版/install-windows-install-options.png)
+
+5. 选择应用程序的安装位置。默认位置通常是没问题的。点击**下一步**。
+
+   ![IPFS桌面版的安装位置窗口。](./图像/IPFS桌面版/install-windows-install-location.png)
+
+6. 等待安装完成并点击**完成**。
+
+   ![IPFS桌面版的安装完成窗口。](./图像/IPFS桌面版/install-windows-install-finish.png)
+
+7. 现在你可以在状态栏中找到一个IPFS图标。
+
+   ！[Windows状态栏中的IPFS桌面版状态栏菜单。](./图像/IPFS桌面版/install-windows-ipfs-desktop-status-bar.png)
+
+IPFS桌面版应用程序已完成安装。你现在可以开始[添加你的网站]（）。
