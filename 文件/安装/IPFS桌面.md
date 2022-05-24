@@ -77,7 +77,7 @@ IPFS桌面版应用程序已完成安装。你现在可以开始[添加你的网
 4. 打开你的**应用程序**文件夹并打开IPFS桌面版应用程序。
 5. 你可能会得到警告信息，说_IPFS Desktop.app无法打开。点击**在Finder中显示**。
 
-   ![显示无法安装该应用程序的警告信息](./图像/IPFS桌面版/install-macos-ipfs-canot-be-opened.png)
+   ![显示无法安装该应用程序的警告信息](./图像/IPFS桌面版/install-macos-ipfs-cannot-be-opened.png)
 
 6. 在你的**应用程序**文件夹中找到**IPFS Desktop.app**。
 7. 按住`control`键，点击**IPFS Desktop.app**，并点击**开启**。
@@ -93,4 +93,16 @@ IPFS桌面版应用程序已完成安装。你现在可以开始[添加你的网
    ![MacOS状态栏中的IPFS桌面版状态栏菜单。](./图像/IPFS桌面版/install-macos-ipfs-desktop-status-bar.png)
 
 IPFS桌面版应用程序已完成安装。你现在可以开始[添加你的网站]()。
+
+###使用".deb "安装
+
+1. 从 [IPFS桌面版的GitHub仓库] (https://github.com/ipfs/ipfs-desktop#linuxfreebsd) 下载最新的`.deb`安装程序。
+2. 用Ubuntu软件双击安装软件包，或者移动到你下载安装程序的地方，通过命令行安装。
+    
+    ```shell
+    sudo dpkg -i ./ipfs-desktop-[version]-amd64.deb
+    ```
+    
+    将"[version]"替换为你刚刚下载的IPFS包的版本号。
+
 
