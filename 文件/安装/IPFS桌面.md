@@ -42,16 +42,16 @@ IPFS桌面版|IPFS桌面版在应用程序中为你提供了IPFS的所有功能-
 1. 进入[IPFS桌面版下载页面](https://github.com/ipfs/ipfs-desktop/releases)
 2. 找到以`.exe`结尾的IPFS桌面版最新版本的链接。
 
-   ![IPFS桌面版下载页面。](./图像/IPFS桌面版/install-windows-download-ex-page.png)
+   ![IPFS桌面版下载页面](./图像/IPFS桌面版/install-windows-download-ex-page.png)
 
 3. 运行`.exe`文件，开始安装。
 4. 选择是否只为你自己还是为电脑上所有用户安装该应用程序。点击**下一步**。
 
-   ![IPFS桌面版安装选项窗口。](./图像/IPFS桌面版/install-windows-install-options.png)
+   ![IPFS桌面版安装选项窗口](./图像/IPFS桌面版/install-windows-install-options.png)
 
 5. 选择应用程序的安装位置。默认位置通常是没问题的。点击**下一步**。
 
-   ![IPFS桌面版的安装位置窗口。](./图像/IPFS桌面版/install-windows-install-location.png)
+   ![IPFS桌面版的安装位置窗口](./图像/IPFS桌面版/install-windows-install-location.png)
 
 6. 等待安装完成并点击**完成**。
 
