@@ -1,6 +1,6 @@
 标题|简介
 |---|---|
-IPFS桌面版|IPFS桌面版在应用程序中为你提供了IPFS的所有功能--一个完整的IPFS节点，加上易上手的操作系统菜单快捷方式和一个多合一的文件管理器、对等地图和内容资源管理器。| 
+IPFS桌面版|IPFS桌面版在应用程序中为你提供了IPFS的所有功能--一个完整的IPFS节点，加上易上手的操作系统菜单快捷方式和一个多合一的文件管理器、同伴管理和内容资源管理器。| 
 
 # IPFS桌面版
 
@@ -10,4 +10,8 @@ IPFS桌面版|IPFS桌面版在应用程序中为你提供了IPFS的所有功能-
 
 如果你的电脑上已经有一个IPFS节点，IPFS桌面版将作为该节点的控制面板和文件浏览器。如果你还没拥有一个节点，它将为你安装一个。无论哪种方式，IPFS桌面版都会自动检查更新。
 
-![IPFS桌面版状态屏](./images/ipfs-desktop/desktop-status.png)
+![IPFS桌面版状态屏](./图像/IPFS桌面版/desktop-status.png)
+
+文件页面|浏览页面|同伴页面|设定页面|菜单栏/任务栏
+|---|---|---|---|---|
+|![文件页面截图](./图像/IPFS桌面版/desktop-files.png) | ![浏览页面截图](./图像/IPFS桌面版/desktop-explore.png) | ![同伴页面截图](./图像/IPFS桌面版/desktop-peers.png) | ![设定页面截图](./图像/IPFS桌面版/desktop-settings.png) | ![菜单栏/任务栏截图](./图像/IPFS桌面版/desktop-menubar-taskbar.png) |
